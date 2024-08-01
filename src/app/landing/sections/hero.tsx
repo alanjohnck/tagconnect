@@ -16,6 +16,7 @@ useGSAP(()=>{
         {
           scrollTrigger:{
             trigger:".hero",
+            
             // start:"top top",
             // end:"bottom top",
             // pin:true,
@@ -24,22 +25,20 @@ useGSAP(()=>{
         }
       )
 
-      t1.fromTo(".hero",{scale:0,opacity:0},{scale:1,opacity:2,visibility:"visible",duration:3,ease:"power1"})
-        .fromTo(".streamline",{width:"0rem",opacity:0},{width:"30rem",opacity:1,duration:3});
+      t1.fromTo(".hero",{scale:0,opacity:0},{scale:1,opacity:1,visibility:"visible",duration:2,ease:"power1"})
   }
 },[preloader])
 
 
   return (
-    <section className={`hero   w-screen h-screen bg-[white] flex flex-col justify-start items-center gap-4`}>
+    <section className={`hero   w-screen h-screen bg-[white] flex flex-col justify-start items-center gap-4 `}>
         <div className='h-[30vh]'>
         </div>
         <div className='screen flex flex-col gap-2 text-center items-center justify-center '>
-            <h1 className='text-[#6C757D] text-4xl font-semi-bold'>
+            <h1 className='text-[#6C757D] text-4xl font-bold p-2 '>
                Streamlining Automation Service for Everyone
             </h1>
-            <div className='streamline border-b-2 border-[#343A40] text-center '  />
-            <p  className='text-[#6C757D] text-sm font-thick'>
+            <p  className='text-[#6C757D] text-sm font-thick p-2'>
                 Streamlining your automation solutions with expert support 
                 <br />
                 <span className='service-line' style={{width:"0"}}>

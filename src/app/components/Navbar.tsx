@@ -24,7 +24,8 @@ useGSAP(()=>{
 
 
   return (
-    <div className='nav w-screen h-[10vh] flex items-center bg-white border-b-2 '>
+    <nav className='flex justify-center items-center p-4'>
+    <div className='nav w-[95vw] h-[10vh] flex items-center bg-white border-2  '>
           <div className='w-[30vw] flex justify-start p-4'>
               <div className='w-7 h-5 flex flex-col gap-1 '>
                  <hr className='w-full border-2 border-[#343A40]' />
@@ -45,6 +46,7 @@ useGSAP(()=>{
                <h2>Contact</h2>
           </div>
     </div>
+    </nav>
   )
 }
 

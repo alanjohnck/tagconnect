@@ -4,18 +4,16 @@ import Head from 'next/head'
 import React from 'react'
 import gsap from 'gsap';
 function Preloader() {
-    
+  let  Heading = "TagConnect"
+  let characters = Heading.split('');
   useGSAP(()=>{
-    gsap.fromTo(".preloader-text",{
-       scale:0
-    },
-    {   
-        scale:1,
-        y:0,
-        stagger:.05,
-        duration:.1,
+    gsap.to(".char",{
+      y:40,
+      stagger:.05,
+      duration:.1,
+      delay:.1
     })
-  },[])
+  })
  
   return (
     <>
@@ -23,8 +21,10 @@ function Preloader() {
         <div>
             
         </div>
-        <div>
-            <h1 id="preloader-text" className='preloader text-[6rem] leading-[5.9rem] p-2 ' >TagConnect</h1>
+        <div className='flex m-2'>
+            {characters.map((char) => (
+              <h1 key={char} className='char text-[6rem] leading-[5.9rem] '>{char}</h1>
+            ))}
            {/* <hr className='border-[white]' /> */}
         </div>
 

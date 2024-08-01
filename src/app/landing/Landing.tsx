@@ -6,6 +6,7 @@ import Preloader from './sections/Preloader';
 import gsap from 'gsap';
 import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import Navbar from '../components/Navbar';
+import Diagram from './sections/Diagram';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -33,10 +34,11 @@ function Landing() {
           <Preloader />
         </div>
       )}
-      <div className={`hero-s absolute top-0 w-screen h-screen  duration-1000 `}>
+      <div className={`hero-s absolute top-0 w-screen h-screen duration-1000  `}>
         <Navbar preloader={preloader} />
         <Hero preloader={preloader} />
         <Service />
+        <Diagram />
       </div>
     </section>
   );
