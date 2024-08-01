@@ -29,7 +29,7 @@ function Landing() {
   return (
     <section className='main'>
       {preloader && (
-        <div className={`preloader absolute top-0 z-20 ${!preloader && 'hidden '}`}>
+        <div className={`preloader  absolute top-0 z-20 ${!preloader && 'hidden '}`}>
           <Preloader />
         </div>
       )}

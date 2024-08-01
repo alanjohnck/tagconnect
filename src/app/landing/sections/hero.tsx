@@ -38,7 +38,7 @@ useGSAP(()=>{
             <h1 className='text-[#6C757D] text-4xl font-semi-bold'>
                Streamlining Automation Service for Everyone
             </h1>
-            <hr className='streamline border-2 border-black text-center ' style={{width:"0",opacity:0}} />
+            <hr className='streamline border-2 border-[#343A40] text-center '  />
             <p  className='text-[#6C757D] text-sm font-thick'>
                 Streamlining your automation solutions with expert support 
                 <br />
