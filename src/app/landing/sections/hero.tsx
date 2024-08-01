@@ -25,7 +25,7 @@ useGSAP(()=>{
       )
 
       t1.fromTo(".hero",{scale:0,opacity:0},{scale:1,opacity:2,visibility:"visible",duration:3,ease:"power1"})
-        .fromTo(".streamline",{width:"0",opacity:0},{width:"80%",opacity:1,duration:3});
+        .fromTo(".streamline",{width:"0rem",opacity:0},{width:"30rem",opacity:1,duration:3});
   }
 },[preloader])
 

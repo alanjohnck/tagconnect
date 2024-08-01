@@ -22,3 +22,11 @@
     text-wrap: balance;
   }
 }
+.char{
+  transform: translateY(115px);
+  transition: transform .5s;
+}
+.preloader{
+
+  clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
+}
