@@ -2,13 +2,11 @@
 import { useGSAP } from '@gsap/react';
 import Head from 'next/head'
 import React from 'react'
-import SplitType from 'split-type'; // Import the SplitType type
 import gsap from 'gsap';
 function Preloader() {
     
   useGSAP(()=>{
-    const preloaderText = new SplitType("#preloader-text")
-    gsap.fromTo(".char",{
+    gsap.fromTo(".preloader-text",{
        scale:0
     },
     {   
