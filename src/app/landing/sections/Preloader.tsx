@@ -19,9 +19,6 @@ function Preloader() {
  
   return (
     <>
-    <Head>
-      <script  src="https://unpkg.com/split-type"></script>
-    </Head>
     <section className='w-screen h-screen bg-[#212529] text-white flex flex-col items-center justify-center'>
         <div>
             
