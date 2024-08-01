@@ -48,7 +48,7 @@ useGSAP(()=>{
              <div className='w-1/2 bg-blue-400 p-2'>
              </div>
              <div className='w-1/2 flex flex-col items-center justify-start border-2'>
-                <h1 className='text-4xl p-2 font-bold '>HMI DEBUGGING</h1>
+                <h1 className='text-4xl p-2 font-bold '>HMI Debugging</h1>
                 <p>
                     We provide HMI debugging services for Rockwell Automation, Siemens, and InTouch.
                 </p>
