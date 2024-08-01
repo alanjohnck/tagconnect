@@ -33,15 +33,12 @@ useGSAP(()=>{
   return (
     <section className={`hero   w-screen h-screen bg-[white] flex flex-col justify-start items-center gap-4`}>
         <div className='h-[30vh]'>
-
         </div>
         <div className='screen flex flex-col gap-2 text-center items-center justify-center '>
-
             <h1 className='text-[#6C757D] text-4xl font-semi-bold'>
                Streamlining Automation Service for Everyone
             </h1>
             <hr className='streamline border-2 border-black text-center ' style={{width:"0",opacity:0}} />
-
             <p  className='text-[#6C757D] text-sm font-thick'>
                 Streamlining your automation solutions with expert support 
                 <br />
@@ -49,10 +46,7 @@ useGSAP(()=>{
                 for Rockwell Automation, Siemens, and InTouch.
                 </span>
             </p>
-
         </div>
-    
-
     </section>
   )
 }
