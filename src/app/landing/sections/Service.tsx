@@ -15,7 +15,6 @@ useGSAP(()=>{
         end:"bottom top",
         pin:true,
         scrub:.1,
-        markers:true
       }
     })
     timeline
