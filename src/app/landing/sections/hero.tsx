@@ -1,53 +1,59 @@
+"use client";
+import React, { useRef } from "react";
+import { delay, motion, useScroll, useTransform } from "framer-motion";
 
-"use client"
-import React, { useEffect } from 'react'
-import gsap from 'gsap'; // <-- import GSAP
-import { useGSAP } from '@gsap/react'; // <-- import the hook from our React package
+const Hero = () => {
+  const paragraph = "Expert engineers crafting seamless HMI experiences";
 
+  const ele = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ele,
+    offset: ["start .5 ", ".5 end"],
+  });
 
-gsap.registerPlugin(useGSAP);
-
-function Hero({preloader}:{preloader:boolean}) {
-
-  //The animation after preloader
-useGSAP(()=>{
-  if(preloader){
-      const t1= gsap.timeline(
-        {
-          scrollTrigger:{
-            trigger:".hero",
-            
-            // start:"top top",
-            // end:"bottom top",
-            // pin:true,
-            // markers:true
-          }
-        }
-      )
-
-      t1.fromTo(".hero",{scale:0,opacity:0},{scale:1,opacity:1,visibility:"visible",duration:2,ease:"power1"})
-  }
-},[preloader])
-
+ // const words = paragraph.split(" ");
 
   return (
-    <section className={`hero   w-screen h-screen bg-[white] flex flex-col justify-start items-center gap-4 `}>
-        <div className='h-[30vh]'>
-        </div>
-        <div className='screen flex flex-col gap-2 text-center items-center justify-center '>
-            <h1 className='text-[#6C757D] text-4xl font-bold p-2 '>
-               Streamlining Automation Service for Everyone
-            </h1>
-            <p  className='text-[#6C757D] text-sm font-thick p-2'>
-                Streamlining your automation solutions with expert support 
-                <br />
-                <span className='service-line' style={{width:"0"}}>
-                for Rockwell Automation, Siemens, and InTouch.
-                </span>
-            </p>
-        </div>
-    </section>
+    <div className="w-screen h-screen flex flex-col items-center justify-around">
+        <h1 className=" text-5xl font-bold">
+        Expert engineers crafting seamless HMI experiences
+        </h1>
+        {/* <p className="text-white text-4xl font-bold">{paragraph}</p> */}
+    </div>
+    // <div className="w-screen h-[200vh] " ref={ele}>
+    //   <div className="w-screen h-screen" />
+    //   <p className="flex flex-wrap gap-2 text-balanced p-5  text-center  " >
+    //     {words.map((word, index) => {
+    //       const start = index / words.length;
+    //       const end = start + 1 / words.length;
+    //       return (
+    //         <Word key={index} range={[start, end]} progress={scrollYProgress} >
+    //           {word}
+    //         </Word>
+    //       );
+    //     })}
+    //   </p>
+    // </div>
   )
-}
+};
 
-export default Hero
+export default Hero;
+
+// const Word = ({
+//   children,
+//   range,
+//   progress,
+// }: {
+//   children: string;
+//   range: [number, number];
+//   progress: any;
+// }) => {
+//     const opacity =useTransform(progress,range,[1,0.3])
+//     const color = useTransform(progress, range, ["#ff6600", "#fff",]);
+//     const delay =useTransform(progress,range,[0,1])
+//   return (
+//     <motion.span style={{  color,opacity }} transition={{delay:Number(delay)*.05}}  className="text-8xl font-semibold">
+//       {children}
+//     </motion.span>
+//   );
+// };
