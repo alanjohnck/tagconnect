@@ -1,7 +1,6 @@
 "use client"
-import { useGSAP } from '@gsap/react'
 import React from 'react'
-import gsap from 'gsap'
+
 function Navbar() {
 
   return (
