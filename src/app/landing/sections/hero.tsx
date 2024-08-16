@@ -1,15 +1,8 @@
 "use client";
-import React, { useRef } from "react";
-import { delay, motion, useScroll, useTransform } from "framer-motion";
+import React, { } from "react";
 
 const Hero = () => {
-  const paragraph = "Expert engineers crafting seamless HMI experiences";
 
-  const ele = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ele,
-    offset: ["start .5 ", ".5 end"],
-  });
 
  // const words = paragraph.split(" ");
 
