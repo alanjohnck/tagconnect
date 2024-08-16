@@ -21,9 +21,6 @@ export default function RootLayout({
     <html lang="en" className="overflow-x-hidden ">
      
       <body className={inter.className}>
-        {/* <nav className="overflow-x-hidden">
-          <Navbar />
-        </nav> */}
         <SmoothScroll>
           <Navbar />
           {children}

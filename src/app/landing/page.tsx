@@ -1,12 +1,12 @@
 import React from 'react'
-import Hero from './sections/Hero'
+// import Hero from './sections/Hero'
 import HMISection from './sections/HMISection'
 import DynamicExpertSection from './sections/DynamicExpertSection'
 
 function Landing() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <HMISection />
       <DynamicExpertSection />
       {/* <FeaturesSection /> */}
