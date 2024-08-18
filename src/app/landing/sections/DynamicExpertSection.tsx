@@ -32,8 +32,8 @@ function DynamicExpertSection() {
   const words = "Your Dynamic Expert".split(" ");
   return (
     <div className='w-screen h-screen flex items-center justify-center'>
-    <div ref={container} className='w-[96%] h-screen flex flex-col gap-5 items-center justify-start bg-[#EEF3ED]'>
-      <div  className='w-screen h-[40%] flex justify-center items-center'>
+    <div ref={container}    className='w-[96%] h-screen flex flex-col gap-5 items-center justify-start bg-[#EEF3ED]'>
+      <div className='w-screen h-[40%] flex justify-center items-center'>
         <h1 className='font-[500] text-[20px] leading-[22px] lg:text-[70px] lg:leading-[32px] tracking-[-0.5px]'>
             {words.map((word, index) => (
                   <Words key={index} word={word} index={index} scrollYProgress={scrollYProgress} totalWords={words.length} />

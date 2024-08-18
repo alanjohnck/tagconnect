@@ -31,7 +31,7 @@ function HMISection() {
     ];
 
     return (
-        <div className='w-screen h-screen flex flex-col items-center justify-center'>
+        <section className='w-screen h-screen flex flex-col items-center justify-center'>
             <div ref={container} className='w-[96%] h-1/2 bg-[#EEF3ED] flex flex-col items-center justify-end gap-5 rounded-sm'>
                 <div className='h-1/2 flex items-center justify-center'>
                     <h1 className='font-onsite w-3/4 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>
@@ -51,7 +51,7 @@ function HMISection() {
                     <InfoBlock key={index} title={block.title} content={block.content} />
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
 
