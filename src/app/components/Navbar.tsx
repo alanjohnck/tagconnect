@@ -4,9 +4,9 @@ import React from 'react'
 function Navbar() {
 
   return (
-    <nav className='flex justify-start items-center gap-5 p-4 '>
-       <div className='w-[10%] h-fit'>
-            <h1 className='text-2xl font-bold'>Tagdynamix</h1>
+    <nav className='flex justify-start items-center gap-5 p-4 bg-black text-white'>
+       <div className='w-[5%] h-[5%]'>
+            <img src="./logo.svg" className='scale-50 object-cover'></img>
        </div>
        <div className='w-[80%] '>
          <ul className='flex gap-6 text-lg justify-center items-center'>
