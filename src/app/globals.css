@@ -20,3 +20,25 @@ html{
   height: 0px;
   background: transparent;
 }
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-container.active {
+  border: 2px solid red; /* Example of an active state */
+}

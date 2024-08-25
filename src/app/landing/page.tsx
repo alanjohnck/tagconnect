@@ -15,6 +15,7 @@ function Landing() {
       </div>
       <HMISection />
       <DynamicExpertSection />
+      <FeaturesSection />
       <Others />
     </>
   )
