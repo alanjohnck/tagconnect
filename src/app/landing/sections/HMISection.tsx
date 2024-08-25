@@ -35,39 +35,39 @@ function HMISection() {
                 scrollTrigger: {
                     trigger: container.current,
                     start: "top 100px",
-                    end: "top 200px",
-                    scrub:.5,
-                    markers: true
+                    end: "top 100px",
+                    scrub:.6,
+                    markers: true,
+                    onLeaveBack: () => {
+                        gsap.to(words, {
+                            color: "#E2ECE2", // Reset to initial color
+                            duration:0.2
+                        });
+                    }
                 }
             })
             .to(words,{
                 onStart:()=>{
-                    gsap.to(words, {
+                    gsap.to(words ,{
                         color: "#ed5729", // Final color to black
-                        stagger: 0.1, // Slightly faster stagger for final transition
+                        stagger: 0.2, // Slightly faster stagger for final transition
                         ease: "power1.in",
+                        opacity:2,
                     });
                 }
                 ,
                 onComplete:()=>{
                     gsap.to(words, {
                         color: "#000", // Transition to black
-                        ease: "power1.in",
-                        stagger:.1,
+                        ease: "Power1.in",
+                        stagger:0.2,
                         
                          // Time for the transition to black
                     });
                 }
                 // Time for the transition to orange
             })
-            // .to(words, {
-            //     color: "#ed5729", // Transition to orange
-            //     stagger: {
-            //         each: 0.2, // Control the stagger for smooth animation
-            //     },
-            //     ease: "power1.inOut",
-            //     // Time for the transition to orange
-            // })
+          
           
         }
     }, []);
@@ -76,10 +76,10 @@ function HMISection() {
     return (
         <section className='w-screen h-screen flex flex-col items-center justify-center'>
             <div ref={container} className='w-[96%] h-1/2 bg-[#EEF3ED] flex flex-col items-center justify-end gap-5 rounded-sm'>
-                <div className='h-1/2 flex items-center justify-center text-[#E2ECE2]'>
+                <div className='h-1/2 flex items-center justify-center '>
                     <h1 ref={textRef} className='font-onsite w-3/4 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>
                         {wordsArray.map((word, index) => (
-                            <span key={index} className="word inline-block mx-1 font-9xl font-900 pt-4 pb-4">
+                            <span key={index} className="word text-[#E2ECE2] inline-block mx-1 font-9xl font-900 pt-4 pb-4">
                                 {word}
                             </span>
                         ))}

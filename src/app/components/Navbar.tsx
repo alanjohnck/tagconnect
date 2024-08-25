@@ -5,12 +5,9 @@ function Navbar() {
 
   return (
     <nav className='flex justify-start items-center gap-5 p-4 bg-black text-white'>
-       <div className='w-[20%]  flex'>
-          <div className=' flex'>
-            <img src='./LogoWhite1.svg' className='w-10 h-10'></img>
-          </div> 
-          <div>
-            <img src="./Tagdynamix.svg" className='w-20 h-10'></img>
+       <div className='w-fit  flex'>
+          <div className='h-full flex justify-center items-center'>
+            <img src='./Logo_Tagdynamix.webp' className='w-30 h-10'></img>
           </div>  
        </div>
        <div className='w-[80%] '>
