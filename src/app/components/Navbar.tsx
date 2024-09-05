@@ -5,10 +5,10 @@ function Navbar() {
 
   return (
     <nav className='flex justify-start items-center gap-5 p-4 bg-black text-white'>
-       <div className='w-fit  flex'>
-          <div className='h-full flex justify-center items-center'>
-            <img src='./Logo_Tagdynamix.webp' className='w-30 h-10'></img>
-          </div>  
+       <div className='w-[10%]  flex'>
+          {/* <div className=' flex justify-center items-center backdrop-blur-md'>
+            <img src='./Logo_Tagdynamix.webp' className='w-fit '></img>
+          </div>   */}
        </div>
        <div className='w-[80%] '>
          <ul className='flex gap-6 text-lg justify-center items-center'>

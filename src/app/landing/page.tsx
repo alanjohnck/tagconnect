@@ -2,8 +2,8 @@ import React from 'react'
 // import Hero from './sections/Hero'
 import HMISection from './sections/HMISection'
 import DynamicExpertSection from './sections/DynamicExpertSection'
-import FeaturesSection from './sections/FeaturesSection'
 import Others from './sections/Others'
+import UNSSection from './sections/UNSSection'
 
 function Landing() {
   return (
@@ -15,7 +15,7 @@ function Landing() {
       </div>
       <HMISection />
       <DynamicExpertSection />
-      <FeaturesSection />
+      <UNSSection />
       <Others />
     </>
   )

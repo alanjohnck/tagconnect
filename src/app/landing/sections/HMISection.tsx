@@ -2,7 +2,6 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Words from '@/app/components/Words';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +18,40 @@ function HMISection() {
     const container = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
 
+    useEffect(() => {
+        const words = textRef.current?.querySelectorAll(".word");
+
+        if (words) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: "top top",
+                    end: "+=20",
+                    scrub: 0.5,
+                    onLeaveBack: () => {
+                        gsap.to(words, {
+                            color: "#E2ECE2",
+                            duration: 0.4
+                        });
+                    }
+                }
+            });
+
+            tl.to(words, {
+                color: "#FF6E3D", // Brighter orange
+                stagger: 0.2,
+                duration: 1,
+                ease: "power2.in",
+            })
+            .to(words, {
+                color: "#000",
+                stagger: 0.05,
+                duration: 0.2,
+                ease: "power2.in",
+            });
+        }
+    }, []);
+
     const wordsArray = "Custom HMI and SCADA development on any platform".split(" ");
 
     const infoBlocks = [
@@ -27,56 +60,10 @@ function HMISection() {
         { title: 'T03', content: 'Crafting Quality Frameworks for Seamless Automation' }
     ];
 
-    useEffect(() => {
-        const words = textRef.current?.querySelectorAll(".word");
-
-        if (words) {
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: container.current,
-                    start: "top 100px",
-                    end: "top 100px",
-                    scrub:.6,
-                    markers: true,
-                    onLeaveBack: () => {
-                        gsap.to(words, {
-                            color: "#E2ECE2", // Reset to initial color
-                            duration:0.2
-                        });
-                    }
-                }
-            })
-            .to(words,{
-                onStart:()=>{
-                    gsap.to(words ,{
-                        color: "#ed5729", // Final color to black
-                        stagger: 0.2, // Slightly faster stagger for final transition
-                        ease: "power1.in",
-                        opacity:2,
-                    });
-                }
-                ,
-                onComplete:()=>{
-                    gsap.to(words, {
-                        color: "#000", // Transition to black
-                        ease: "Power1.in",
-                        stagger:0.2,
-                        
-                         // Time for the transition to black
-                    });
-                }
-                // Time for the transition to orange
-            })
-          
-          
-        }
-    }, []);
-
-
     return (
         <section className='w-screen h-screen flex flex-col items-center justify-center'>
-            <div ref={container} className='w-[96%] h-1/2 bg-[#EEF3ED] flex flex-col items-center justify-end gap-5 rounded-sm'>
-                <div className='h-1/2 flex items-center justify-center '>
+            <div ref={container} className='w-[96%] h-1/2 flex flex-col items-center justify-end gap-5 rounded-sm'>
+                <div className='h-1/2 flex items-center justify-center'>
                     <h1 ref={textRef} className='font-onsite w-3/4 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>
                         {wordsArray.map((word, index) => (
                             <span key={index} className="word text-[#E2ECE2] inline-block mx-1 font-9xl font-900 pt-4 pb-4">
@@ -86,7 +73,7 @@ function HMISection() {
                     </h1>
                 </div>
             </div>
-            <div className='w-[96%] h-1/2 bg-[#EEF3ED] flex justify-center items-end p-4 gap-2 flex-wrap'>
+            <div className='w-[96%] h-1/2 flex justify-center items-end p-4 gap-2 flex-wrap'>
                 <div className='w-[30%] h-full flex items-center justify-center'>
                     <h2 className='font-[400] text-[20px] leading-[22px] lg:text-[30px] lg:leading-[32px] tracking-[-0.5px]'>
                         Team of HMI/ SCADA & data management specialists
