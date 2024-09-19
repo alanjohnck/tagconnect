@@ -2,8 +2,8 @@ import React from 'react'
 // import Hero from './sections/Hero'
 import HMISection from './sections/HMISection'
 import DynamicExpertSection from './sections/DynamicExpertSection'
-import Others from './sections/Others'
 import UNSSection from './sections/UNSSection'
+import HowWeDo from './sections/HowWeDo'
 
 function Landing() {
   return (
@@ -14,9 +14,16 @@ function Landing() {
         Expert engineers crafting seamless HMI experiences
       </div>
       <HMISection />
+      <hr className="w-screen h-2" />
+
       <DynamicExpertSection />
+      <hr className="w-screen h-2" />
+
       <UNSSection />
-      <Others />
+      <hr className="w-screen h-2" />
+      <HowWeDo />
+
+      {/* <Others /> */}
     </>
   )
 }

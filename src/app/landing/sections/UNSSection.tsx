@@ -21,13 +21,13 @@ const UNSSection = () => {
     { name: "CRM", icon: "🤝" },
     { name: "Inventory", icon: "📋" },
   ];
+  const colorSVG ='';
 
   useEffect(() => {
     const section = sectionRef.current;
     const circle = circleRef.current;
     const nodeElements = nodesRef.current;
     const lineElements = linesRef.current;
-
     gsap.set(nodeElements, { autoAlpha: 0, scale: 0 });
     gsap.set(lineElements, { autoAlpha: 0, drawSVG: "0%" });
 
@@ -39,7 +39,6 @@ const UNSSection = () => {
           trigger: section,
           start: "top center",
           end: "bottom center",
-          scrub: 1,
         },
       })
       .to(circle, { scale: 1, duration: 1, ease: "power2.out" })
@@ -51,12 +50,24 @@ const UNSSection = () => {
         ease: "back.out(1.7)",
       })
       .to(lineElements, {
+        stroke:"#FF6E3D",
         autoAlpha: 1,
         drawSVG: "100%",
         stagger: 0.1,
         duration: 0.5,
         ease: "power1.inOut",
-      });
+      }).to(
+        lineElements,
+        {
+          stroke:"#000",
+          strokeDasharray:"5,5",
+          drawSVG: "100%",
+          colorSVG:"#000",
+          duration: 0.5,
+          ease: "power1.inOut",
+        },
+        "-=0.5"
+      );
 
     nodeElements.forEach((node, index) => {
       if (node) {
@@ -67,8 +78,7 @@ const UNSSection = () => {
           scrollTrigger: {
             trigger: section,
             start: "top center",
-            end: "bottom center",
-            scrub: 1,
+            end: "top bottom",
           },
         });
       }
@@ -76,9 +86,9 @@ const UNSSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-screen h-[500vh] flex flex-col justify-start items-center">
-      <div className="sticky top-0 h-[120vh] flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-bold mb-12">Integrating Common Industrial Components into UNS</h1>
+    <div ref={sectionRef} className="w-screen h-[100vh] flex flex-col justify-start items-center">
+      <div className=" h-[150vh] flex flex-col justify-center items-center">
+        <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Integrating Common Industrial Components into UNS</h1>
         <div className="relative w-[500px] h-[500px]">
           <svg className="absolute inset-0 w-full h-full ">
             {nodes.map((_, index) => (
@@ -91,9 +101,7 @@ const UNSSection = () => {
                 y1="250"
                 x2={250 + Math.cos(index * (2 * Math.PI / nodes.length)) * 180}
                 y2={250 + Math.sin(index * (2 * Math.PI / nodes.length)) * 180}
-                stroke="#FF6E3D"
                 strokeWidth="2"
-                strokeDasharray="5,5"
               />
             ))}
           </svg>
@@ -116,7 +124,7 @@ const UNSSection = () => {
             </div>
           ))}
         </div>
-        <h1>
+        <h1 className="font-onsite">
           Unify your data with a modern distributed architecture, eliminating silos and providing a single, centralized access
           point for all enterprise systems.
         </h1>
