@@ -84,11 +84,11 @@ const HowWeDo: React.FC = () => {
   }, []);
 
   return (
-    <div className='w-screen h-[100vh] '>
-    <div ref={containerRef} className="max-w-screen min-h-[100vh] sticky top-0 mx-auto p-8 flex flex-col justify-center ">
+    <div className='w-screen h-[150vh] flex items-center  '>
+    <div ref={containerRef} className="w-screen flex flex-col justify-center tems-center  sticky  mx-auto p-8  ">
       <div className="mb-16 flex flex-col items-center justify-center">
         <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">How we do</h1>
-        <p className='font-thin'>We follow Software development life cycle</p>
+        <p className='text-[#989B97] font-[400] text-[14px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body'>We follow Software development life cycle</p>
       </div>
       <div className="relative">
         <div className="line absolute top-4 left-0 w-full h-1 bg-gray-300 transform origin-left scale-x-0"></div>

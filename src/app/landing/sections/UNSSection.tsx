@@ -124,7 +124,7 @@ const UNSSection = () => {
             </div>
           ))}
         </div>
-        <h1 className="font-onsite">
+        <h1 className="text-[#989B97] font-[400] text-[14px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body">
           Unify your data with a modern distributed architecture, eliminating silos and providing a single, centralized access
           point for all enterprise systems.
         </h1>

@@ -3,6 +3,7 @@ import { Roboto_Flex, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import SmoothScroll from "./components/SmoothScroll";
+import Footer from "./components/Footer";
 
 //const inter = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const inter = Roboto_Flex({subsets: ["latin"] });
@@ -24,6 +25,7 @@ export default function RootLayout({
         <SmoothScroll>
           <Navbar />
           {children}
+          <Footer />
         </SmoothScroll>
         </body>
     </html>

@@ -9,7 +9,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, description }) => (
-  <div className="flex  flex-col items-start h-full  bg-[#EEF3ED]   ">
+  <div className="flex  flex-col items-start h-full mt-10   bg-[#EEF3ED]   ">
     <div className="flex h-[80%] justify-center items-center w-full ">
       <Icon className="w-20 h-20  text-gray-700" />
     </div>
@@ -42,9 +42,9 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="max-w-screen h-screen w-full p-8 bg-white rounded-xl shadow-lg">
-        <h1 className="font-onsite mb-5 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">
+    <div className="min-h-[150vh]  flex items-start justify-center">
+      <div className="max-w-screen h-screen w-full p-8 bg-white ">
+        <h1 className="font-onsite mt-10 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">
           On-Time Fixes,<br />
           Just When You Need Them Most.
         </h1>
