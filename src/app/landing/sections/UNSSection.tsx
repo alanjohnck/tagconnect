@@ -86,7 +86,7 @@ const UNSSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-screen h-[100vh] flex flex-col justify-start items-center">
+    <div ref={sectionRef} className="w-screen h-[100vh] flex flex-col justify-start items-center ">
       <div className=" h-[150vh] flex flex-col justify-center items-center">
         <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Integrating Common Industrial Components into UNS</h1>
         <div className="relative w-[500px] h-[500px]">
@@ -120,7 +120,7 @@ const UNSSection = () => {
               className="absolute inset-0 m-auto w-20 h-20 bg-[#FF6E3D] rounded-full shadow-lg flex flex-col items-center justify-center"
             >
               <span className="text-2xl">{node.icon}</span>
-              <span className="text-xs mt-1 text-white font-bold">{node.name}</span>
+              <span className="text-lg scale-50 mt-1 text-white ">{node.name}</span>
             </div>
           ))}
         </div>

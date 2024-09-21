@@ -31,7 +31,8 @@ const HowWeDo: React.FC = () => {
           trigger: containerRef.current,
           start: 'top center',
           end: 'bottom center',
-          scrub: 1,
+          scrub:1,
+          once:true,
         },
       });
 
@@ -83,15 +84,15 @@ const HowWeDo: React.FC = () => {
   }, []);
 
   return (
-    <div className='w-screen h-[200vh] mt-20 '>
-    <div ref={containerRef} className="max-w-screen min-h-[100vh] sticky top-0 mx-auto p-8 flex flex-col justify-start">
+    <div className='w-screen h-[100vh] '>
+    <div ref={containerRef} className="max-w-screen min-h-[100vh] sticky top-0 mx-auto p-8 flex flex-col justify-center ">
       <div className="mb-16 flex flex-col items-center justify-center">
         <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">How we do</h1>
         <p className='font-thin'>We follow Software development life cycle</p>
       </div>
       <div className="relative">
         <div className="line absolute top-4 left-0 w-full h-1 bg-gray-300 transform origin-left scale-x-0"></div>
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           {steps.map((step, index) => (
             <div key={index} className="step flex flex-col items-center">
               <div className="dot w-8 h-8 rounded-full bg-gray-400 mb-4 transform scale-0"></div>

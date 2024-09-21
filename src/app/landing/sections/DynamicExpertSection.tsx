@@ -71,7 +71,7 @@ function DynamicExpertSection() {
   const wordsArray = "Your Dynamic Expert".split(" ");
   return (
   <div className='w-screen h-auto flex items-center justify-center'>
-    <div   className='w-[96%] h-[150vh] flex flex-col gap-5 items-center justify-start bg-white'>
+    <div   className='w-[96%] h-[150vh] flex flex-col gap-5 items-center justify-start bg-[#EEF3ED]'>
       <div ref={container} className='w-screen h-[40vh] flex justify-center items-center'>
            <h1 ref={textRef} className='font-onsite w-3/4 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>
               {wordsArray.map((word, index) => (
