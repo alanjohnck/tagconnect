@@ -9,12 +9,12 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, description }) => (
-  <div className="flex  flex-col items-start h-full mt-10   bg-[#EEF3ED]   ">
+  <div className="flex  flex-col items-start h-full  bg-[#EEF3ED]   ">
     <div className="flex h-[80%] justify-center items-center w-full ">
       <Icon className="w-20 h-20  text-gray-700" />
     </div>
-    <div className='bg-white h-[20%] w-full '>
-    <h3 className="text-lg font-semibold mb-1">{title}</h3>
+    <div className='bg-white h-[20%] w-full'>
+    <h3 className="text-lg font-semibold   mt-4 ">{title}</h3>
     <hr className='w-full h-1 border-3 border-black' />
     <p className="text-sm  text-gray-600">{description}</p>
    </div>
@@ -42,18 +42,18 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-[150vh]  flex items-start justify-center">
-      <div className="max-w-screen h-screen w-full p-8 bg-white ">
-        <h1 className="font-onsite mt-10 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">
+    <div className="h-[150vh] w-screen flex flex-col  items-start justify-center p-5 drop-shadow-md border-2 border-white ">
+       <div className='flex justify-center items-center w-screen h-fit p-4'>
+        <h1 className="font-onsite  text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">
           On-Time Fixes,<br />
           Just When You Need Them Most.
         </h1>
-        <div className="grid grid-cols-1 h-[80%] md:grid-cols-3 gap-8">
+        </div>
+        <div className="grid grid-cols-1 h-full md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
         </div>
-      </div>
     </div>
   );
 };

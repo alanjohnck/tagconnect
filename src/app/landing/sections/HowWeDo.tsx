@@ -6,8 +6,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
-  { name: 'Requirement', review: 'Design Review' },
-  { name: 'Design', review: '' },
+  { name: 'Requirement', review: ''},
+  { name: 'Architecture', review: '' },
+  { name: 'Design', review: 'Design Review' },
   { name: 'Code', review: 'Code Review' },
   { name: 'Module Test', review: '' },
   { name: 'Integration Test', review: '' },
@@ -40,7 +41,7 @@ const HowWeDo: React.FC = () => {
       timelineRef.current.to(lineElement, { 
         scaleX: 1, 
         duration: 1, 
-        ease: "power1.inOut" 
+        ease: "power1" 
       });
 
       // Animate each step
@@ -51,7 +52,7 @@ const HowWeDo: React.FC = () => {
 
         timelineRef.current!
           .to(dot, { 
-            scale: 1.5, 
+            scale: 1, 
             backgroundColor: '#FF6E3D', 
             duration: 0.3 
           }, `-=${index ? 0.1 : 0}`)
@@ -66,7 +67,7 @@ const HowWeDo: React.FC = () => {
             duration: 0.3 
           }, '<');
 
-        if (index < stepElements.length - 1) {
+        if (index <= stepElements.length - 1) {
           timelineRef.current!.to(dot, { 
             scale: 1, 
             backgroundColor: '#FF6E3D', 
@@ -84,7 +85,7 @@ const HowWeDo: React.FC = () => {
   }, []);
 
   return (
-    <div className='w-screen h-[150vh] flex items-center  '>
+    <div className='w-screen h-[120vh] flex items-center  '>
     <div ref={containerRef} className="w-screen flex flex-col justify-center tems-center  sticky  mx-auto p-8  ">
       <div className="mb-16 flex flex-col items-center justify-center">
         <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">How we do</h1>

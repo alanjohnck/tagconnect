@@ -31,7 +31,7 @@ const UNSSection = () => {
     gsap.set(nodeElements, { autoAlpha: 0, scale: 0 });
     gsap.set(lineElements, { autoAlpha: 0, drawSVG: "0%" });
 
-    const radius = 180; // Increased radius for more space
+    const radius = 210; // Increased radius for more space
 
     gsap
       .timeline({
@@ -86,8 +86,8 @@ const UNSSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-screen h-[100vh] flex flex-col justify-start items-center ">
-      <div className=" h-[150vh] flex flex-col justify-center items-center">
+    <div ref={sectionRef} className="w-screen h-[150vh] flex flex-col justify-evenly gap-10 ">
+      <div className=" h-[150vh] flex flex-col justify-between items-center">
         <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Integrating Common Industrial Components into UNS</h1>
         <div className="relative w-[500px] h-[500px]">
           <svg className="absolute inset-0 w-full h-full ">
@@ -101,13 +101,13 @@ const UNSSection = () => {
                 y1="250"
                 x2={250 + Math.cos(index * (2 * Math.PI / nodes.length)) * 180}
                 y2={250 + Math.sin(index * (2 * Math.PI / nodes.length)) * 180}
-                strokeWidth="2"
+                strokeWidth="3"
               />
             ))}
           </svg>
           <div
             ref={circleRef}
-            className="absolute inset-0 m-auto w-32 h-32 bg-white drop-shadow-md rounded-full flex items-center justify-center text-black text-2xl font-bold"
+            className="absolute inset-0 m-auto w-40 h-40 bg-white drop-shadow-md rounded-full flex items-center justify-center text-black text-2xl font-bold"
           >
             UNS
           </div>
@@ -124,7 +124,7 @@ const UNSSection = () => {
             </div>
           ))}
         </div>
-        <h1 className="text-[#989B97] font-[400] text-[14px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body">
+        <h1 className="text-[#989B97]  font-bold text-[20px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body">
           Unify your data with a modern distributed architecture, eliminating silos and providing a single, centralized access
           point for all enterprise systems.
         </h1>
