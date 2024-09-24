@@ -38,7 +38,7 @@ function HMISection() {
             });
 
             tl.to(words, {
-                color: "#FF6E3D", // Brighter orange
+                color: "#0B2F9F", // Brighter orange
                 stagger: 0.2,
                 duration: 1,
                 ease: "power2.in",
@@ -61,8 +61,9 @@ function HMISection() {
     ];
 
     return (
-        <section className='w-screen h-screen flex flex-col items-center justify-center'>
-            <div ref={container} className='w-[96%] h-1/2 flex flex-col items-center justify-end gap-5 rounded-sm bg-[#EEF3ED]'>
+        <section className='min-w-screen h-screen flex flex-col items-center justify-center'>
+          <div className='h-full pt-6 pl-6 pr-6'>
+            <div ref={container} className='w-full h-1/2 flex flex-col items-center justify-end  bg-[#EEF3ED]'>
                 <div className='h-1/2 flex items-center justify-center'>
                     <h1 ref={textRef} className='font-onsite w-3/4 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>
                         {wordsArray.map((word, index) => (
@@ -73,7 +74,8 @@ function HMISection() {
                     </h1>
                 </div>
             </div>
-            <div className='w-[96%] h-1/2 flex justify-center items-end p-4 gap-2 flex-wrap bg-[#EEF3ED]'>
+
+            <div className=' h-1/2 flex justify-center items-end gap-2 flex-wrap bg-[#EEF3ED]'>
                 <div className='w-[30%] h-full flex items-center justify-center'>
                     <h2 className='font-[400] text-[20px] leading-[22px] lg:text-[30px] lg:leading-[32px] tracking-[-0.5px]'>
                         Team of HMI/ SCADA & data management specialists
@@ -83,6 +85,7 @@ function HMISection() {
                     <InfoBlock key={index} title={block.title} content={block.content} />
                 ))}
             </div>
+           </div>
         </section>
     );
 }

@@ -50,7 +50,7 @@ const UNSSection = () => {
         ease: "back.out(1.7)",
       })
       .to(lineElements, {
-        stroke:"#FF6E3D",
+        stroke:"#227B94",
         autoAlpha: 1,
         drawSVG: "100%",
         stagger: 0.1,
@@ -86,8 +86,8 @@ const UNSSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-screen h-[150vh] flex flex-col justify-evenly gap-10 ">
-      <div className=" h-[150vh] flex flex-col justify-between items-center">
+    <div ref={sectionRef} className="w-screen h-[120vh] flex flex-col justify-evenly items-center gap-10 mt-20 ">
+      <div className=" h-[150vh] w-[96%] flex flex-col justify-between items-center ">
         <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Integrating Common Industrial Components into UNS</h1>
         <div className="relative w-[500px] h-[500px]">
           <svg className="absolute inset-0 w-full h-full ">
@@ -117,14 +117,14 @@ const UNSSection = () => {
               ref={(el) => {
                 nodesRef.current[index] = el;
               }}
-              className="absolute inset-0 m-auto w-20 h-20 bg-[#FF6E3D] rounded-full shadow-lg flex flex-col items-center justify-center"
+              className="absolute inset-0 m-auto w-20 h-20 bg-[#227B94] rounded-full shadow-lg flex flex-col items-center justify-center"
             >
               <span className="text-2xl">{node.icon}</span>
               <span className="text-lg scale-50 mt-1 text-white ">{node.name}</span>
             </div>
           ))}
         </div>
-        <h1 className="text-[#989B97]  font-bold text-[20px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body">
+        <h1 className=" mb-10  font-semibold text-[20px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body">
           Unify your data with a modern distributed architecture, eliminating silos and providing a single, centralized access
           point for all enterprise systems.
         </h1>

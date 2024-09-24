@@ -15,7 +15,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
     </div>
     <div className='bg-white h-[20%] w-full'>
     <h3 className="text-lg font-semibold   mt-4 ">{title}</h3>
-    <hr className='w-full h-1 border-3 border-black' />
+    <hr className='w-full h-[.09rem] bg-black' />
     <p className="text-sm  text-gray-600">{description}</p>
    </div>
   </div>
@@ -42,18 +42,20 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <div className="h-[150vh] w-screen flex flex-col  items-start justify-center p-5 drop-shadow-md border-2 border-white ">
-       <div className='flex justify-center items-center w-screen h-fit p-4'>
-        <h1 className="font-onsite  text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">
+    <div className="h-[120vh] w-screen flex flex-col  items-center justify-start  ">
+      <div className='h-full w-[90%] '>
+        <div className='h-fit flex justify-center items-center p-5 '>
+          <h1 className="font-onsite  text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">
           On-Time Fixes,<br />
           Just When You Need Them Most.
-        </h1>
+          </h1>
         </div>
-        <div className="grid grid-cols-1 h-full md:grid-cols-3 gap-8">
+        <div className="h-3/4 grid grid-cols-1  md:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
         </div>
+      </div>
     </div>
   );
 };

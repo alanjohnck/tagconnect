@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
+import { ChartLine } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -34,7 +34,7 @@ export default function Management() {
 
   return (
     <div className=" w-screen flex flex-col items-center justify-center ">
-      <div className='p-5 flex justify-center'>
+      <div className='flex justify-center'>
         <h1 className='font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>Manage and view every data captured </h1>
       </div>
       <div className='relative w-[96%] flex'>
@@ -62,9 +62,9 @@ export default function Management() {
       <div className="w-[96%] lg:w-1/2 h-screen sticky top-0">
         <div className='w-full h-screen relative'>
           {/* Images stacked on top of each other */}
-          <div className="image-section absolute inset-0 scale-95 ">
+          <div className="image-section absolute inset-0 scale-95 flex justify-center ite ">
             {/* <img src="/auto1.jpg" alt="robotic arm 1" className="object-cover w-full h-full" /> */}
-
+                <ChartLine />
           </div>
           <div className="image-section absolute inset-0 scale-95">
             <img src="/auto2.jpg" alt="robotic arm 2" className="object-cover w-full h-full" />

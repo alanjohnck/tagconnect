@@ -6,27 +6,31 @@ import UNSSection from './sections/UNSSection'
 import HowWeDo from './sections/HowWeDo'
 import SupportSection from './sections/SupportSection'
 import Management from './sections/Management'
+import Hero from './sections/Hero'
 
 
 function Landing() {
   return (
-    <>
+    <div>
       {/* <Hero /> */}
-      <div className='w-screen h-screen flex flex-col items-center justify-center font-bold text-5xl text-center bg-black'>
-        In Progress
-        Expert engineers crafting seamless HMI experiences
-      </div>
+      <Hero />
       <HMISection />
 
       <DynamicExpertSection />
-      <hr className="w-screen h-2" />
+      {/* <hr className="w-screen h-2" /> */}
       <Management />
-      
+      {/* <hr className="w-screen h-2" /> */}
+
       <UNSSection />
-      <hr className="w-screen h-2" />
+      
       <HowWeDo />
+      <br></br>
+      <hr className="w-screen h-2" />
+      <br></br>
+
+
       <SupportSection />
-    </>
+    </div>
   )
 }
 

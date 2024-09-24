@@ -4,7 +4,7 @@ import React from 'react'
 function Navbar() {
 
   return (
-    <nav className='flex justify-start items-center gap-5 p-4 bg-black text-white'>
+    <nav className='w-screen h-[10vh] flex justify-start items-center gap-5  bg-black text-white'>
        <div className='w-[10%]  flex'>
           {/* <div className=' flex justify-center items-center backdrop-blur-md'>
             <img src='./Logo_Tagdynamix.webp' className='w-fit '></img>

@@ -53,7 +53,7 @@ const HowWeDo: React.FC = () => {
         timelineRef.current!
           .to(dot, { 
             scale: 1, 
-            backgroundColor: '#FF6E3D', 
+            backgroundColor: '#227B94', 
             duration: 0.3 
           }, `-=${index ? 0.1 : 0}`)
           .to(text, { 
@@ -70,7 +70,7 @@ const HowWeDo: React.FC = () => {
         if (index <= stepElements.length - 1) {
           timelineRef.current!.to(dot, { 
             scale: 1, 
-            backgroundColor: '#FF6E3D', 
+            backgroundColor: '#227B94', 
             duration: 0.3 
           }, '+=0.2');
         }
@@ -86,7 +86,7 @@ const HowWeDo: React.FC = () => {
 
   return (
     <div className='w-screen h-[120vh] flex items-center  '>
-    <div ref={containerRef} className="w-screen flex flex-col justify-center tems-center  sticky  mx-auto p-8  ">
+    <div ref={containerRef} className="w-screen flex flex-col justify-evenly items-stretch sticky  mx-auto p-8  ">
       <div className="mb-16 flex flex-col items-center justify-center">
         <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">How we do</h1>
         <p className='text-[#989B97] font-[400] text-[14px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body'>We follow Software development life cycle</p>
