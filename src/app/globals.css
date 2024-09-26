@@ -8,10 +8,21 @@
   .text-balance {
     text-wrap: balance;
   }
-}
+
 
 html{
   overflow: scroll;
   background: white;
   color:black;
+}
+@font-face {
+  font-family: "font-onsite";
+  src: url('/fonts/OnsiteStandardTRIAL-Regular-BF64b60bd6980ca.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+}
+body {
+  font-family: "font-onsite", sans-serif;
 }

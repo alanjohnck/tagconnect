@@ -85,16 +85,16 @@ function DynamicExpertSection() {
       <div className='w-full h-[100vh] flex flex-col justify-evenly items-center   bg-[#EEF3ED]'>
         {expertData.map((item) => (
           // <div className='w-full h-full flex justify-center items-center'>
-          <div key={item.id} className='w-full h-1/2 flex justify-center items-center  border-t-[.5px] border-t-black'>
+          <div key={item.id} className='w-[90%] h-1/2 flex justify-center items-center  border-t-[.5px] border-t-black'>
             <div className='w-1/2 h-full gap-5 flex items-center justify-start text-center'>
               <span className='font-mdio font-[500] text-[10px] leading-[10px] text-body w-[40px] lg:w-1/3 mt-[3px] lg:mt-0 shrink-0 text-slate-500'>{item.id}</span>
-              <h2 className='text-[14px] leading-[16px] lg:text-[16px] lg:leading-[19px] font-[500] text-black'>{item.title}</h2>
+              <h3 className='font-[400] text-[20px] leading-[22px] lg:text-[30px] lg:leading-[32px] tracking-[-0.5px] lg:text-center'>{item.title}</h3>
             </div>
             {/* <div className='w-1/4 h-full flex items-center justify-center p-2'>
                <img src={item.imgSrc} className='object-cover text-center w-fit h-fit' ></img>
             </div> */}
             <div className='w-1/4 h-full flex items-center justify-start'>
-              <p className='text-[#989B97] font-[400] text-[14px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body'>{item.description}</p>
+              <h3 className='text-[#989B97] font-[400] text-xl leading-[20px] lg:text-[17px] lg:leading-[19px] text-body'>{item.description}</h3>
             </div>
           </div>
           // </div> 

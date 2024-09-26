@@ -6,10 +6,9 @@ import SmoothScroll from "./components/SmoothScroll";
 import Footer from "./components/Footer";
 
 //const inter = Bebas_Neue({ weight: "400", subsets: ["latin"] });
-const inter = Roboto_Flex({subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TagDynamix",
+  title: "Tagdynamix",
   description: "Providing Automation Services",
 };
 
@@ -20,8 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden ">
+      
      
-      <body className={inter.className}>
+      <body>
         <SmoothScroll>
           <Navbar />
           {children}

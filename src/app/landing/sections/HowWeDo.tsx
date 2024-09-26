@@ -6,108 +6,77 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
-  { name: 'Requirement', review: ''},
-  { name: 'Architecture', review: '' },
-  { name: 'Design', review: 'Design Review' },
-  { name: 'Code', review: 'Code Review' },
-  { name: 'Module Test', review: '' },
-  { name: 'Integration Test', review: '' },
-  { name: 'Factory Acceptance Test', review: '' },
-  { name: 'Site Acceptance Test', review: '' },
-  { name: 'Training & Support', review: '' },
+  { name: 'Requirements', icon: '📋', description: 'Define project scope' },
+  { name: 'Design', icon: '🎨', description: 'Create architecture' },
+  { name: 'Development', icon: '💻', description: 'Write code' },
+  { name: 'Testing', icon: '🧪', description: 'Ensure quality' },
+  { name: 'Deployment', icon: '🚀', description: 'Release to production' },
+  { name: 'Maintenance', icon: '🔧', description: 'Ongoing support' }
 ];
 
-const HowWeDo: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const timelineRef = useRef<gsap.core.Timeline | null>(null);
+const SDLCOptimisticFlow = () => {
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    if (containerRef.current) {
-      const stepElements = containerRef.current.querySelectorAll('.step');
-      const lineElement = containerRef.current.querySelector('.line');
-      const dotElements = containerRef.current.querySelectorAll('.dot');
+    const container = containerRef.current;
+    const stepElements = container.querySelectorAll('.step');
+    const lines = container.querySelectorAll('.connection-line');
 
-      timelineRef.current = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top center',
-          end: 'bottom center',
-          scrub:1,
-          once:true,
-        },
-      });
+    gsap.set(stepElements, { autoAlpha: 0, y: 20 });
+    gsap.set(lines, { scaleY: 0 });
 
-      // Animate the line
-      timelineRef.current.to(lineElement, { 
-        scaleX: 1, 
-        duration: 1, 
-        ease: "power1" 
-      });
-
-      // Animate each step
-      stepElements.forEach((step, index) => {
-        const dot = dotElements[index];
-        const text = step.querySelector('p');
-        const review = step.querySelector('p:last-child');
-
-        timelineRef.current!
-          .to(dot, { 
-            scale: 1, 
-            backgroundColor: '#227B94', 
-            duration: 0.3 
-          }, `-=${index ? 0.1 : 0}`)
-          .to(text, { 
-            opacity: 1, 
-            y: 0, 
-            duration: 0.3 
-          }, '<')
-          .to(review, { 
-            opacity: 1, 
-            y: 0, 
-            duration: 0.3 
-          }, '<');
-
-        if (index <= stepElements.length - 1) {
-          timelineRef.current!.to(dot, { 
-            scale: 1, 
-            backgroundColor: '#227B94', 
-            duration: 0.3 
-          }, '+=0.2');
-        }
-      });
-    }
-
-    return () => {
-      if (timelineRef.current) {
-        timelineRef.current.kill();
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 1,
       }
-    };
+    });
+
+    stepElements.forEach((step, index) => {
+      tl.to(step, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'back.out(1.7)',
+      }, index * 0.2);
+
+      if (index < stepElements.length - 1) {
+        tl.to(lines[index], {
+          scaleY: 1,
+          duration: 0.5,
+          ease: 'none',
+        }, '>-0.3');
+      }
+    });
   }, []);
 
   return (
-    <div className='w-screen h-[120vh] flex items-center  '>
-    <div ref={containerRef} className="w-screen flex flex-col justify-evenly items-stretch sticky  mx-auto p-8  ">
-      <div className="mb-16 flex flex-col items-center justify-center">
-        <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">How we do</h1>
-        <p className='text-[#989B97] font-[400] text-[14px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body'>We follow Software development life cycle</p>
-      </div>
-      <div className="relative">
-        <div className="line absolute top-4 left-0 w-full h-1 bg-gray-300 transform origin-left scale-x-0"></div>
-        <div className="flex justify-between ">
+    <div className="bg-gray-50 min-h-screen flex items-center justify-center p-8">
+      <div ref={containerRef} className="max-w-2xl w-full bg-white shadow-lg rounded-xl p-8">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">SDLC Workflow</h2>
+        <div className="relative flex flex-col items-center">
           {steps.map((step, index) => (
-            <div key={index} className="step flex flex-col items-center">
-              <div className="dot w-8 h-8 rounded-full bg-gray-400 mb-4 transform scale-0"></div>
-              <p className="text-lg font-medium text-center opacity-0 transform translate-y-4">{step.name}</p>
-              {step.review && (
-                <p className="text-sm text-gray-500 mt-2 opacity-0 transform translate-y-4">{step.review}</p>
+            <React.Fragment key={index}>
+              <div className="step w-64 bg-white border border-purple-200 rounded-lg p-4 mb-4 flex items-center">
+                <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-xl">{step.icon}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-700">{step.name}</h3>
+                  <p className="text-sm text-gray-500">{step.description}</p>
+                </div>
+              </div>
+              {index < steps.length - 1 && (
+                <div className="connection-line w-0.5 h-8 bg-purple-300 mb-4 transform origin-top"></div>
               )}
-            </div>
+            </React.Fragment>
           ))}
         </div>
       </div>
     </div>
-    </div>
   );
 };
 
-export default HowWeDo;
+export default SDLCOptimisticFlow;
