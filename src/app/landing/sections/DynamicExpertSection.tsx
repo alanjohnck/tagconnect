@@ -70,10 +70,10 @@ function DynamicExpertSection() {
 
   const wordsArray = "Your Dynamic Expert".split(" ");
   return (
-  <div className='min-w-screen h-[150vh] flex flex-col items-center justify-center'>
+  <div className='w-screen h-[150vh] flex flex-col items-center justify-center'>
     <div className='h-full w-full pb-6 pl-6 pr-6'>
       <div ref={container} className='w-full h-[50vh] flex justify-center items-center  bg-[#EEF3ED]'>
-           <h1 ref={textRef} className='font-onsite w-3/4 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>
+           <h1 ref={textRef} className='font-onsite w-3/4 text-center'>
               {wordsArray.map((word, index) => (
                   <span key={index} className="word text-[#E2ECE2] inline-block mx-1 font-9xl font-900 pt-4 pb-4">
                        {word}
@@ -84,17 +84,19 @@ function DynamicExpertSection() {
 
       <div className='w-full h-[100vh] flex flex-col justify-evenly items-center   bg-[#EEF3ED]'>
         {expertData.map((item) => (
-          // <div className='w-full h-full flex justify-center items-center'>
           <div key={item.id} className='w-[90%] h-1/2 flex justify-center items-center  border-t-[.5px] border-t-black'>
-            <div className='w-1/2 h-full gap-5 flex items-center justify-start text-center'>
-              <span className='font-mdio font-[500] text-[10px] leading-[10px] text-body w-[40px] lg:w-1/3 mt-[3px] lg:mt-0 shrink-0 text-slate-500'>{item.id}</span>
-              <h3 className='font-[400] text-[20px] leading-[22px] lg:text-[30px] lg:leading-[32px] tracking-[-0.5px] lg:text-center'>{item.title}</h3>
+
+            <div className='w-1/2 h-full gap-10 flex items-center justify-start  text-center '>
+                <div className='w-1/2 h-1/2 flex justify-between items-center'>
+                   <p className='font-mdio  text-slate-500'>{item.id}</p>
+                   <div className='w-3/4 h-full flex justify-start items-center'>
+                   <h2 className='font-[400] '>{item.title}</h2>
+                   </div>
+                </div>  
             </div>
-            {/* <div className='w-1/4 h-full flex items-center justify-center p-2'>
-               <img src={item.imgSrc} className='object-cover text-center w-fit h-fit' ></img>
-            </div> */}
-            <div className='w-1/4 h-full flex items-center justify-start'>
-              <h3 className='text-[#989B97] font-[400] text-xl leading-[20px] lg:text-[17px] lg:leading-[19px] text-body'>{item.description}</h3>
+          
+            <div className='w-[35%] h-full flex items-center justify-start'>
+              <h3 className='text-[#989B97] '>{item.description}</h3>
             </div>
           </div>
           // </div> 

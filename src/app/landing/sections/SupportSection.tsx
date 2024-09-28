@@ -14,9 +14,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
       <Icon className="w-20 h-20  text-gray-700" />
     </div>
     <div className='bg-white h-[20%] w-full'>
-    <h3 className="text-lg font-semibold   mt-4 ">{title}</h3>
-    <hr className='w-full h-[.09rem] bg-black' />
-    <p className="text-sm  text-gray-600">{description}</p>
+        <h3 className="font-[600]">{title}</h3>
+        <hr className='w-full h-[.09rem] bg-black' />
+        <p className="  text-gray-600">{description}</p>
    </div>
   </div>
 );
@@ -45,7 +45,7 @@ const ServicesSection: React.FC = () => {
     <div className="h-[120vh] w-screen flex flex-col  items-center justify-start  ">
       <div className='h-full w-[90%] '>
         <div className='h-fit flex justify-center items-center p-5 '>
-          <h1 className="font-onsite  text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">
+          <h1 className="font-onsite   text-center">
           On-Time Fixes,<br />
           Just When You Need Them Most.
           </h1>

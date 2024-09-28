@@ -88,7 +88,7 @@ const UNSSection = () => {
   return (
     <div ref={sectionRef} className="w-screen h-[120vh] flex flex-col justify-evenly items-center gap-10 mt-20 ">
       <div className=" h-[150vh] w-[96%] flex flex-col justify-between items-center ">
-        <h1 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Integrating Common Industrial Components into UNS</h1>
+        <h1 className="font-onsite w-3/4 m-[5vh]  text-center">Integrating Common Industrial Components into UNS</h1>
         <div className="relative w-[500px] h-[500px]">
           <svg className="absolute inset-0 w-full h-full ">
             {nodes.map((_, index) => (

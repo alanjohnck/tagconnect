@@ -35,7 +35,7 @@ export default function Management() {
   return (
     <div className=" w-screen flex flex-col items-center justify-center ">
       <div className='flex justify-center'>
-        <h1 className='font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>Manage and view every data captured </h1>
+        <h1 className='font-onsite w-3/4 m-[5vh]  text-center'>Manage and view every data captured </h1>
       </div>
       <div className='relative w-[96%] flex'>
       {/* Left Scrollable Text Section */}

@@ -6,11 +6,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const InfoBlock = ({ title, content }: { title: string, content: string }) => (
-    <div className='w-[20%] h-full font-thin flex flex-col items-start justify-center text-balance gap-2'>
-        <span className='font-[500]'>{title}</span>
-        <p className='text-[#989B97] font-[400] text-[14px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body'>
+    <div className='w-[20%] h-1/2 font-thin flex flex-col items-start justify-start text-balance gap-2'>
+        <h3 
+        className='font-[500]'
+        >
+            {title}
+        </h3>
+
+        <p 
+        className='text-[#989B97] w-3/4 text-body'
+        >
             {content}
         </p>
+
     </div>
 );
 
@@ -61,13 +69,17 @@ function HMISection() {
     ];
 
     return (
-        <section className='min-w-screen h-screen flex flex-col items-center justify-center'>
-          <div className='h-full pt-6 pl-6 pr-6'>
+        <section className='w-screen h-[100vh] flex flex-col items-center justify-center pt-6 pl-6 pr-6'>
+          <div className='w-auto h-full '>
             <div ref={container} className='w-full h-1/2 flex flex-col items-center justify-end  bg-[#EEF3ED]'>
                 <div className='h-1/2 flex items-center justify-center'>
-                    <h1 ref={textRef} className='font-onsite w-3/4 text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center'>
+                <h1 
+                  ref={textRef} 
+                 className="font-onsite w-screen md:w-[80%] text-center font-medium tracking-tight text-[#E2ECE2]
+                 "
+                  >
                         {wordsArray.map((word, index) => (
-                            <span key={index} className="word text-[#E2ECE2] inline-block mx-1 font-9xl font-900 pt-4 pb-4">
+                            <span key={index} className="word text-[#E2ECE2] inline-block  px-2 font-9xl font-900 pt-4 pb-4">
                                 {word}
                             </span>
                         ))}
@@ -75,16 +87,19 @@ function HMISection() {
                 </div>
             </div>
 
-            <div className=' h-1/2 flex justify-center items-end gap-2 flex-wrap bg-[#EEF3ED]'>
-                <div className='w-[30%] h-full flex items-center justify-center'>
-                    <h2 className='font-[400] text-[20px] leading-[22px] lg:text-[30px] lg:leading-[32px] tracking-[-0.5px]'>
+         <div className=' h-1/2 w-full flex justify-center items-center  bg-[#EEF3ED] '>
+             <div className='h-1/2 w-full flex items-center justify-center gap-3'>
+                <div className='w-[50%] h-1/2  '>
+                    <h2 className='font-[400] text-center '>
                         Team of HMI/ SCADA & data management specialists
                     </h2>
                 </div>
                 {infoBlocks.map((block, index) => (
                     <InfoBlock key={index} title={block.title} content={block.content} />
                 ))}
+             </div>
             </div>
+
            </div>
         </section>
     );
