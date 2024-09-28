@@ -50,7 +50,7 @@ const UNSSection = () => {
         ease: "back.out(1.7)",
       })
       .to(lineElements, {
-        stroke:"#227B94",
+        stroke:"#E2ECE2",
         autoAlpha: 1,
         drawSVG: "100%",
         stagger: 0.1,
@@ -86,7 +86,7 @@ const UNSSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-screen h-[120vh] flex flex-col justify-evenly items-center gap-10 mt-20 ">
+    <div ref={sectionRef} className="w-screen h-[120vh] flex flex-col justify-evenly items-center gap-10 mt-20  ">
       <div className=" h-[150vh] w-[96%] flex flex-col justify-between items-center ">
         <h1 className="font-onsite w-3/4 m-[5vh]  text-center">Integrating Common Industrial Components into UNS</h1>
         <div className="relative w-[500px] h-[500px]">
@@ -117,17 +117,17 @@ const UNSSection = () => {
               ref={(el) => {
                 nodesRef.current[index] = el;
               }}
-              className="absolute inset-0 m-auto w-20 h-20 bg-[#227B94] rounded-full shadow-lg flex flex-col items-center justify-center"
+              className="absolute inset-0 m-auto w-20 h-20 bg-[#E2ECE2] rounded-full shadow-lg flex flex-col items-center justify-center"
             >
               <span className="text-2xl">{node.icon}</span>
-              <span className="text-lg scale-50 mt-1 text-white ">{node.name}</span>
+              <p className="text-lg scale-50 mt-1 text-black ">{node.name}</p>
             </div>
           ))}
         </div>
-        <h1 className=" mb-10  font-semibold text-[20px] leading-[16px] lg:text-[16px] lg:leading-[19px] text-body">
+        <p className=" mb-10  text-body">
           Unify your data with a modern distributed architecture, eliminating silos and providing a single, centralized access
           point for all enterprise systems.
-        </h1>
+        </p>
       </div>
     </div>
   );

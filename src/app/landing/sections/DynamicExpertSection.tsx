@@ -32,39 +32,39 @@ const expertData = [
 function DynamicExpertSection() {
   const container = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+
+
   useEffect(() => {
-    const words = textRef.current?.querySelectorAll(".word");
+      const words = textRef.current?.querySelectorAll(".word");
 
-    if (words) {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: container.current,
-                start: "top top",
-                end: "+=20",
-                scrub: 0.5,
-                onLeaveBack: () => {
-                    gsap.to(words, {
-                        color: "#E2ECE2",
-                        duration: 0.4
-                    });
-                }
-            }
-        });
-
-        tl.to(words, {
-            color: "#0B2F9F", // Brighter orange
-            stagger: 0.08,
-            duration: 0.3,
-            ease: "power2.in",
-        })
-        .to(words, {
-            color: "#000",
-            stagger: 0.05,
-            duration: 0.2,
-            ease: "power2.in",
-        });
-    }
-
+      if (words) {
+          gsap.timeline({
+              scrollTrigger: {
+                  trigger: container.current,
+                  start: "top top",
+                  end: "+=20",
+                  scrub: 0.5,
+                  onLeaveBack: () => {
+                      gsap.set(words, {
+                          color: "#E2ECE2", // Reset to initial color immediately
+                      });
+                  },
+              },
+          })
+          .to(words, {
+              color: "#A594F9", // Brighter color
+              stagger: 0.15,
+              duration: 2,
+              ease: "power2.in",
+          })
+          .to(words, {
+              color: "#000",
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power2.in",
+          })
+          ;
+      }
   }, []);
 
 
@@ -95,8 +95,8 @@ function DynamicExpertSection() {
                 </div>  
             </div>
           
-            <div className='w-[35%] h-full flex items-center justify-start'>
-              <h3 className='text-[#989B97] '>{item.description}</h3>
+            <div className='w-[30%] h-full flex items-center justify-start'>
+              <p className='text-[#989B97] '>{item.description}</p>
             </div>
           </div>
           // </div> 

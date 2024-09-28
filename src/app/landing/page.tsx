@@ -14,10 +14,10 @@ function Landing() {
       {/* <Hero /> */}
       <Hero />
       <HMISection />
+      <Management />
 
       <DynamicExpertSection />
       {/* <hr className="w-screen h-2" /> */}
-      <Management />
       {/* <hr className="w-screen h-2" /> */}
 
       {/* <UNSSection /> */}
@@ -26,9 +26,11 @@ function Landing() {
       <br></br>
       <hr className="w-screen h-2" />
       <br></br>
-
-
       <SupportSection />
+      <br></br>
+      <hr className="w-screen h-2" />
+      <br></br>
+      <UNSSection />
     </div>
   )
 }
