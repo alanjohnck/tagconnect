@@ -34,8 +34,8 @@ function HMISection() {
                 },
             })
             .to(words, {
-                color: "#A594F9", // Brighter color
-                stagger: 0.15,
+                color: "#399918", // Brighter color
+                stagger: 0.2,
                 duration: 2,
                 ease: "power2.in",
             })
@@ -58,7 +58,8 @@ function HMISection() {
     ];
 
     return (
-        <section className='w-screen h-[100vh] flex flex-col items-center justify-center pt-6 pl-6 pr-6'>
+        <section className='w-screen h-[100vh] flex flex-col items-stretch justify-center pt-6 pl-6 pr-6'>
+
           <div className='w-auto h-full'>
             <div ref={container} className='w-full h-1/2 flex flex-col items-center justify-end bg-[#EEF3ED]'>
                 <div className='h-1/2 flex items-center justify-center'>
@@ -75,10 +76,10 @@ function HMISection() {
                 </div>
             </div>
 
-            <div className='h-1/2 w-full flex justify-center items-center bg-[#EEF3ED]'>
+            <div className='h-1/2 w-full flex justify-center items-center bg-[#EEF3ED] border-b-2'>
                 <div className='h-1/2 w-full flex items-center justify-center gap-3'>
-                    <div className='w-[50%] h-1/2'>
-                        <h2 className='font-[400] text-center'>
+                    <div className='w-[50%] h-1/2 flex items-center justify-end'>
+                        <h2 className='w-[90%] font-[400] '>
                             Team of HMI/ SCADA & data management specialists
                         </h2>
                     </div>
@@ -88,6 +89,7 @@ function HMISection() {
                 </div>
             </div>
           </div>
+
         </section>
     );
 }

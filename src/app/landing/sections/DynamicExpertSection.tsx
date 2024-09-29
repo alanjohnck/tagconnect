@@ -52,7 +52,7 @@ function DynamicExpertSection() {
               },
           })
           .to(words, {
-              color: "#A594F9", // Brighter color
+              color: "#399918", // Brighter color
               stagger: 0.15,
               duration: 2,
               ease: "power2.in",
@@ -70,8 +70,8 @@ function DynamicExpertSection() {
 
   const wordsArray = "Your Dynamic Expert".split(" ");
   return (
-  <div className='w-screen h-[150vh] flex flex-col items-center justify-center'>
-    <div className='h-full w-full pb-6 pl-6 pr-6'>
+  <div className='w-screen h-[150vh] flex flex-col items-center justify-center '>
+    <div className='h-full w-full pb-6 pl-6 pr-6 '>
       <div ref={container} className='w-full h-[50vh] flex justify-center items-center  bg-[#EEF3ED]'>
            <h1 ref={textRef} className='font-onsite w-3/4 text-center'>
               {wordsArray.map((word, index) => (
@@ -82,7 +82,7 @@ function DynamicExpertSection() {
             </h1>
       </div>
 
-      <div className='w-full h-[100vh] flex flex-col justify-evenly items-center   bg-[#EEF3ED]'>
+      <div className='w-full h-[100vh] flex flex-col justify-evenly items-center border-b-2  bg-[#EEF3ED]'>
         {expertData.map((item) => (
           <div key={item.id} className='w-[90%] h-1/2 flex justify-center items-center  border-t-[.5px] border-t-black'>
 
