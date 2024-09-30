@@ -78,7 +78,7 @@ function HMISection() {
 
             <div className='h-1/2 w-full flex justify-center items-center bg-[#EEF3ED] border-b-2'>
                 <div className='h-1/2 w-full flex items-center justify-center gap-3'>
-                    <div className='w-[50%] h-1/2 flex items-center justify-end'>
+                    <div className='w-[50%] h-1/2 flex items-start justify-end'>
                         <h2 className='w-[90%] font-[400] '>
                             Team of HMI/ SCADA & data management specialists
                         </h2>

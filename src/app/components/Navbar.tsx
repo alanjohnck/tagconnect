@@ -13,7 +13,7 @@ function Navbar() {
        <div className='w-[80%] '>
          <ul className='flex gap-6 text-lg justify-center items-center'>
            <li>Platform</li>
-           <li>About Us</li>
+           <a href='/AboutUS'>About Us</a>
            <li>Contact</li>
          </ul>
        </div>
