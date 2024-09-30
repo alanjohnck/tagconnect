@@ -24,7 +24,7 @@ function AboutHero() {
             <div className='w-1/2 h-full'>
 
             </div>
-            <div className='w-1/2 h-full flex '>
+            <div className='w-1/2 h-full flex  p-8 '>
                  <p className='w-1/2 font-medium leading-normal'>
                     We are dedicated to consistently advancing the development, optimization and integration of HMI and SCADA systems to deliver the best available features to benefit our clients.
                  </p>

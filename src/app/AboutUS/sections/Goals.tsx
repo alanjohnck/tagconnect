@@ -42,7 +42,7 @@ Taking care of our employees leads to better results for our clients.`
     <div className='w-screen h-auto'>
       <div className='w-full h-1/4 flex flex-col'>
         <div className='w-full h-3/4 flex items-center p-8'>
-          <h1 className='w-1/2 font-bold'>Our Goals</h1>
+          <h1 className='w-1/2 font-bold '>Our Goals</h1>
         </div>
       </div>
       {contentData.map((item, index) => (
