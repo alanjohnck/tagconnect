@@ -54,11 +54,10 @@ h1 {
 }
 
 /* Large laptop/Monitor (lg breakpoint) */
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
   h1 {
     font-size: 65px;   /* text-[65px] */
     line-height: 60px; /* leading-[62px] */
-    font-weight: 400;
     letter-spacing: -4px;
   }
   h2{
@@ -76,26 +75,7 @@ h1 {
   }
 }
 
-/* Extra-large monitor (xl breakpoint) */
-@media (min-width: 1580px) {
-  h1 {
-    font-size: 5.75rem; /* 60px (text-6xl) */
-    line-height: 1.25;  /* leading-tight */
-  }
-  h2{
-    font-size: 3rem; /* 96px (text-9xl) */
-    line-height: 1.25; /* leading-tight */
-  }
-  h3{
-    font-size: 2rem; /* 96px (text-9xl) */
-    line-height: 1.25; /* leading-tight */
-    
-  }
-  p{
-    font-size: 1.5rem; /* 96px (text-9xl) */
-    line-height: 1.25; /* leading-tight */
-  }
-}
+
 
 /* Ultra-wide monitor (2xl breakpoint) */
 @media (min-width: 2000px) {

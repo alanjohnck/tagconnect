@@ -5,16 +5,16 @@ function AboutHero() {
     <div className='w-screen h-screen flex flex-col '>
       <div className='w-full h-1/2 flex flex-col'>
             <div className='w-full h-3/4 flex items-center p-8'>
-                 <h1 className='w-1/2 font-bold'>
+                 <h1 className='w-[60%] '>
                      Where You Meet 
                      Passionate Experts Who 
                      Collaborate to Engineer
                   </h1>
             </div>
-            <div className='w-full h-1/4 flex justify-evenly'>
+            <div className='w-full h-[10%] flex justify-evenly'>
                   {
                     Array.from({ length: 40 }).map((_, index) => (
-                      <div key={index} className='border-2 h-1/4 bg-black '>
+                      <div key={index} className='border-2 h-3/4 bg-black '>
                       </div>
                     ))
                   }
