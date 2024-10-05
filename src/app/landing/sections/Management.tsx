@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ChartLine } from 'lucide-react'
+import Navbar from '@/app/components/Navbar'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -34,6 +35,7 @@ export default function Management() {
 
   return (
     <div className=" w-screen flex flex-col items-center justify-center px-6 ">
+    
       <div className='bg-[#EEF3ED] w-full'>
          <div className='w-full  flex justify-center '>
            <h1 className='font-onsite w-1/2 m-[5vh] text-center'>Manage and view every data captured </h1>
@@ -41,7 +43,7 @@ export default function Management() {
         <div className='relative w-full flex'>
       {/* Left Scrollable Text Section */}
       <div className="w-[96%] lg:w-1/2 relative z-10">
-        <div className="text-section min-h-screen flex flex-col justify-center p-10 ">
+        <div className="text-section min-h-screen flex flex-col justify-center p-10 rounded-sm ">
           <h2 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Historical data</h2>
           {/* <p>Built-in calibration technology, robotics, AI, and automated post-processing...</p> */}
         </div>
@@ -63,12 +65,12 @@ export default function Management() {
       <div className="w-[96%] lg:w-1/2 h-screen sticky top-0">
         <div className='w-full h-screen relative'>
           {/* Images stacked on top of each other */}
-          <div className="image-section absolute inset-0 scale-95 flex justify-center ite ">
+          <div className="image-section absolute inset-0 scale-95 flex justify-center  ">
             {/* <img src="/auto1.jpg" alt="robotic arm 1" className="object-cover w-full h-full" /> */}
                 <ChartLine />
           </div>
           <div className="image-section absolute inset-0 scale-95">
-            <img src="/auto2.jpg" alt="robotic arm 2" className="object-cover w-full h-full" />
+            <img src="/auto2.jpg" alt="robotic arm 2" className="object-cover w-full h-full  " />
           </div>
           <div className="image-section absolute inset-0 scale-95">
             <img src="/auto1.jpg" alt="robotic arm 3" className="object-cover w-full h-full" />

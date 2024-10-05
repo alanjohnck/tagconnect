@@ -25,7 +25,7 @@ function HMISection() {
                     trigger: container.current,
                     start: "top top",
                     end: "+=20",
-                    scrub: 0.5,
+                    scrub: 0.4,
                     onLeaveBack: () => {
                         gsap.set(words, {
                             color: "#E2ECE2", // Reset to initial color immediately
@@ -34,22 +34,24 @@ function HMISection() {
                 },
             })
             .to(words, {
-                color: "#399918", // Brighter color
-                stagger: 0.2,
-                duration: 2,
+                backgroundImage: "linear-gradient(60deg, #fc6045, #fcae45, #9e64f5, #50d0e6)",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+                stagger: 0.4,
+                duration: 4,
                 ease: "power2.in",
             })
             .to(words, {
                 color: "#000",
-                stagger: 0.1,
-                duration: 0.5,
+                stagger: 0.4,
+                duration: 4,
                 ease: "power2.in",
             })
             ;
         }
     }, []);
 
-    const wordsArray = "Custom HMI and SCADA development on any platform".split(" ");
+    const wordsArray = "Custom\tHMI\tand\tSCADA\tdevelopment\ton\tany\tplatform".split(" ");
 
     const infoBlocks = [
         { title: 'T01', content: 'Intuitive Interfaces, Minimal code and maximum performance' },
@@ -61,7 +63,7 @@ function HMISection() {
         <section className='w-screen h-[100vh] flex flex-col items-stretch justify-center pt-6 pl-6 pr-6'>
 
           <div className='w-auto h-full'>
-            <div ref={container} className='w-full h-1/2 flex flex-col items-center justify-end bg-[#EEF3ED]'>
+            <div ref={container} className='w-full h-1/2 flex flex-col items-center justify-end bg-white'>
                 <div className='h-1/2 flex items-center justify-center'>
                 <h1 
                   ref={textRef} 
@@ -76,7 +78,7 @@ function HMISection() {
                 </div>
             </div>
 
-            <div className='h-1/2 w-full flex justify-center items-center bg-[#EEF3ED] border-b-2'>
+            <div className='h-1/2 w-full flex justify-center items-center bg-white border-b-2'>
                 <div className='h-1/2 w-full flex items-center justify-center gap-3'>
                     <div className='w-[50%] h-1/2 flex items-start justify-end'>
                         <h2 className='w-[90%] font-[400] '>

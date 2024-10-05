@@ -52,7 +52,9 @@ function DynamicExpertSection() {
               },
           })
           .to(words, {
-              color: "#399918", // Brighter color
+              backgroundImage: "linear-gradient(60deg, #fc6045, #fcae45, #9e64f5, #50d0e6)",
+              WebkitBackgroundClip: "text",
+              color: "transparent", // Brighter color
               stagger: 0.15,
               duration: 2,
               ease: "power2.in",
@@ -68,11 +70,11 @@ function DynamicExpertSection() {
   }, []);
 
 
-  const wordsArray = "Your Dynamic Expert".split(" ");
+  const wordsArray = "Your\tDynamic\tExpert".split(" ");
   return (
   <div className='w-screen h-[150vh] flex flex-col items-center justify-center '>
     <div className='h-full w-full pb-6 pl-6 pr-6 '>
-      <div ref={container} className='w-full h-[50vh] flex justify-center items-center  bg-[#EEF3ED]'>
+      <div ref={container} className='w-full h-[50vh] flex justify-center items-center  bg-white'>
            <h1 ref={textRef} className='font-onsite w-3/4 text-center'>
               {wordsArray.map((word, index) => (
                   <span key={index} className="word text-[#E2ECE2] inline-block mx-1 font-9xl font-900 pt-4 pb-4">
@@ -82,16 +84,17 @@ function DynamicExpertSection() {
             </h1>
       </div>
 
-      <div className='w-full h-[100vh] flex flex-col justify-evenly items-center border-b-2  bg-[#EEF3ED]'>
+      <div className='w-full h-[100vh] flex flex-col justify-evenly items-center border-b-2  bg-white'>
         {expertData.map((item) => (
           <div key={item.id} className='w-[90%] h-1/2 flex justify-center items-center  border-t-[.5px] border-t-black'>
 
             <div className='w-1/2 h-full gap-10 flex items-center justify-start  text-center '>
                 <div className='w-1/2 h-1/2 flex justify-between items-center'>
                    <p className='font-mdio  text-slate-500'>{item.id}</p>
+
                    <div className='w-3/4 h-full flex justify-start items-center'>
-                   <h2 className='font-[400] '>{item.title}</h2>
-                   </div>
+                      <h2 className='font-[400] '>{item.title}</h2>
+                   </div>                   
                 </div>  
             </div>
           

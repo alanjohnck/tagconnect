@@ -4,7 +4,7 @@ import React from 'react'
 function Navbar() {
 
   return (
-    <nav className='w-screen h-[10vh] flex justify-start items-center gap-5  bg-black text-white'>
+    <nav className='w-[98%] h-[8vh] flex justify-start items-center  bg-black  text-white rounded-md shadow-sm border-1'>
        <div className='w-[10%]  flex'>
           {/* <div className=' flex justify-center items-center backdrop-blur-md'>
             <img src='./Logo_Tagdynamix.webp' className='w-fit '></img>
@@ -17,6 +17,7 @@ function Navbar() {
            <li>Contact</li>
          </ul>
        </div>
+      
     </nav>
   )
 }

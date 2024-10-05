@@ -1,8 +1,12 @@
+import Navbar from '@/app/components/Navbar'
 import React from 'react'
 
 function AboutHero() {
   return (
     <div className='w-screen h-screen flex flex-col '>
+      <div className='p-2 h-[40] w-full flex items-center justify-center sticky top-5 transition-all '>
+        <Navbar />
+      </div>
       <div className='w-full h-1/2 flex flex-col'>
             <div className='w-full h-3/4 flex items-center p-8'>
                  <h1 className='w-[60%] '>

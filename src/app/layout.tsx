@@ -23,7 +23,7 @@ export default function RootLayout({
      
       <body>
         <SmoothScroll>
-          <Navbar />
+          
           {children}
           <Footer />
         </SmoothScroll>
