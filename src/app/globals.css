@@ -11,7 +11,7 @@
 
 
 html{
-  overflow: scroll;
+  overflow: hidden;
   background: white;
   color:black;
 }

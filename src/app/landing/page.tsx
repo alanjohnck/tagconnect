@@ -16,12 +16,6 @@ function Landing() {
       <HMISection />
       <DynamicExpertSection />
       <Management />
-      {/* <hr className="w-screen h-2" /> */}
-      {/* <hr className="w-screen h-2" /> */}
-
-      {/* <UNSSection /> */}
-      
-      {/* <HowWeDo /> */}
       <br></br>
       <hr className="w-screen h-2" />
       <br></br>
