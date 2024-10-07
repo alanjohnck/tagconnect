@@ -10,7 +10,7 @@ function Hero() {
         <Navbar />
       </div>
       <div className='h-[40rem]'>
-       <TextHoverEffect text='TAGDYNAMIX' />
+       <TextHoverEffect text='tagdynamix' />
       </div>
     </div>
   );
