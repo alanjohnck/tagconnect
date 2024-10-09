@@ -21,30 +21,34 @@ function HMISection() {
 
         if (words) {
             gsap.timeline({
+                
                 scrollTrigger: {
                     trigger: container.current,
                     start: "top top",
-                    end: "+=30",
+                    end: "bottom center",
                     scrub: 0.4,
                     onLeaveBack: () => {
                         gsap.set(words, {
-                            color: "#E2ECE2", // Reset to initial color immediately
+                            color: "#E2ECE2",
+                            stagger:.4,
+                    // Reset to initial color immediately
                         });
                     },
+                    
                 },
             })
             .to(words, {
                 backgroundImage: "linear-gradient(60deg, #fc6045, #fcae45, #9e64f5, #50d0e6)",
                 WebkitBackgroundClip: "text",
                 color: "transparent",
-                stagger: 0.2,
-                duration: 2,
+                stagger: 0.4,
+                duration: 15,
                 ease: "power2.in",
             })
             .to(words, {
                 color: "#000",
-                stagger: 0.2,
-                duration: 2,
+                stagger: 0.4,
+                duration: 6,
                 ease: "power2.in",
             })
             ;
@@ -61,12 +65,12 @@ function HMISection() {
 
     return (
         <section className='w-screen h-[150vh] flex flex-col items-stretch justify-center pt-6 pl-6 pr-6'>
-          <div ref={container} className='w-full h-[75vh] flex items-center justify-center '>
+          <div ref={container} className='w-full h-[75vh] flex items-center justify-center  bg-[#ECF1EC]'>
                 <img src='./web.gif' className='h-full w-1/2 object-fit'></img>
           </div>
           <div  className='w-auto h-[100vh]'>
-            <div className='w-full h-1/2 flex flex-col items-center justify-end bg-white'>
-                <div  ref={textRef}  className='h-1/2 flex items-center justify-center'>
+            <div ref={textRef} className='w-full h-1/2 flex flex-col items-center justify-end bg-[#ECF1EC]'>
+              <div    className='h-full flex items-center justify-center'>
                 <h1 className="font-onsite w-screen md:w-[80%] text-center font-medium tracking-tight text-[#E2ECE2]">
                     {wordsArray.map((word, index) => (
                         <span key={index} className="word text-[#E2ECE2] inline-block px-2 font-9xl font-900 pt-4 pb-4">
@@ -74,10 +78,10 @@ function HMISection() {
                         </span>
                     ))}
                 </h1>
-                </div>
+              </div>
             </div>
 
-            <div className='h-1/2 w-full flex justify-center items-center bg-white border-b-2'>
+            <div className='h-1/2 w-full flex justify-center items-center bg-[#ECF1EC] border-b-2'>
                 <div className='h-1/2 w-full flex items-center justify-center gap-3'>
                     <div className='w-[50%] h-1/2 flex items-start justify-end'>
                         <h2 className='w-[90%] font-[400] '>

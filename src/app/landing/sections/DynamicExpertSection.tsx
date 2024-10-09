@@ -72,8 +72,8 @@ function DynamicExpertSection() {
 
   const wordsArray = "Your\tDynamic\tExpert".split(" ");
   return (
-  <div className='w-screen h-[200vh] flex flex-col items-center justify-center '>
-    <div className='h-full w-full pb-6 pl-6 pr-6 '>
+  <div className='w-screen h-[150vh] flex flex-col items-center justify-center '>
+    <div className='h-full w-full  pl-6 pr-6 '>
       {/* <div ref={container} className='w-full h-[50vh] bg-gray-400 flex items-center justify-center '>
                <hh3>Image Section</hh3>
       </div> */}

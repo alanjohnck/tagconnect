@@ -24,7 +24,7 @@ function MESSection() {
                 scrollTrigger: {
                     trigger: container.current,
                     start: "top top",
-                    end: "+=30",
+                    end: "bottom center",
                     scrub: 0.4,
                     onLeaveBack: () => {
                         gsap.set(words, {
@@ -59,11 +59,11 @@ function MESSection() {
     ];
   return (
     <section className='w-screen h-[150vh] flex flex-col items-stretch justify-center pt-6 pl-6 pr-6'>
-          <div ref={container} className='w-full h-[50vh] flex items-center justify-center '>
+          <div ref={container} className='w-full h-1/2 flex items-center justify-center bg-[#ECF1EC] '>
                 <img src='./web.gif' className='h-full w-1/2 object-fit'></img>
           </div>
-          <div className='w-auto h-[100vh]'>
-            <div className='w-full h-1/2 flex flex-col items-center justify-end bg-white'>
+          <div className='w-auto h-1/2'>
+            <div className='w-full h-1/2 flex flex-col items-center justify-end bg-[#ECF1EC] '>
                 <div className='w-full h-1/2 flex flex-col items-center justify-center'>
                 <p>visualization</p>
                 <h1 
@@ -79,10 +79,10 @@ function MESSection() {
                 </div>
             </div>
 
-            <div className='h-1/2 w-full flex justify-center items-center bg-white border-b-2'>
+            <div className='h-1/2 w-full flex justify-center items-center bg-[#ECF1EC] border-b-2'>
                 <div className='h-1/2 w-full flex items-center justify-center gap-3'>
                     <div className='w-[50%] h-1/2 flex items-start justify-end'>
-                        <h2 className='w-[90%] font-[400] '>
+                        <h2 className='w-[90%] font-[400] text-center'>
                             10X Faster
                         </h2>
                     </div>

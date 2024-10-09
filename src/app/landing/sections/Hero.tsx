@@ -9,7 +9,7 @@ function Hero() {
       <div className='p-2 h-[40] w-full flex items-center justify-center sticky top-5'>
         <Navbar />
       </div>
-      <div className='h-screen'>
+      <div className='h-[40rem]'>
        <TextHoverEffect text='tagdynamix' />
       </div>
     </div>

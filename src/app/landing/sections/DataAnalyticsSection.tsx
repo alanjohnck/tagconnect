@@ -29,10 +29,10 @@ function DataAnalyticsSection() {
                 </div>
             </div>
 
-            <div className='h-1/2 w-full flex justify-center items-center bg-white border-b-2'>
+            <div className='h-1/2 w-full flex justify-center items-center bg-white'>
                 <div className='h-1/2 w-full flex items-center justify-center gap-3'>
                     <div className='w-[50%] h-1/2 flex items-start justify-end'>
-                        <h2 className='w-[90%] font-[400] '>
+                        <h2 className='w-[90%] font-[400] text-center '>
                            View every data captured
                         </h2>
                     </div>
