@@ -72,18 +72,20 @@ function DynamicExpertSection() {
 
   const wordsArray = "Your\tDynamic\tExpert".split(" ");
   return (
-  <div className='w-screen h-[150vh] flex flex-col items-center justify-center '>
+  <div className='w-screen h-[200vh] flex flex-col items-center justify-center '>
     <div className='h-full w-full pb-6 pl-6 pr-6 '>
-      <div ref={container} className='w-full h-[50vh] flex justify-center items-center  bg-white'>
+      {/* <div ref={container} className='w-full h-[50vh] bg-gray-400 flex items-center justify-center '>
+               <hh3>Image Section</hh3>
+      </div> */}
+      <div  className='w-full h-[50vh] flex justify-center items-center  bg-white'>
            <h1 ref={textRef} className='font-onsite w-3/4 text-center'>
               {wordsArray.map((word, index) => (
-                  <span key={index} className="word text-[#E2ECE2] inline-block mx-1 font-9xl font-900 pt-4 pb-4">
+                  <span key={index} className="word text-black inline-block mx-1 font-9xl font-900 pt-4 pb-4">
                        {word}
                   </span>
               ))}
             </h1>
       </div>
-
       <div className='w-full h-[100vh] flex flex-col justify-evenly items-center border-b-2  bg-white'>
         {expertData.map((item) => (
           <div key={item.id} className='w-[90%] h-1/2 flex justify-center items-center  border-t-[.5px] border-t-black'>

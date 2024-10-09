@@ -24,7 +24,7 @@ function HMISection() {
                 scrollTrigger: {
                     trigger: container.current,
                     start: "top top",
-                    end: "+=20",
+                    end: "+=30",
                     scrub: 0.4,
                     onLeaveBack: () => {
                         gsap.set(words, {
@@ -37,14 +37,14 @@ function HMISection() {
                 backgroundImage: "linear-gradient(60deg, #fc6045, #fcae45, #9e64f5, #50d0e6)",
                 WebkitBackgroundClip: "text",
                 color: "transparent",
-                stagger: 0.4,
-                duration: 4,
+                stagger: 0.2,
+                duration: 2,
                 ease: "power2.in",
             })
             .to(words, {
                 color: "#000",
-                stagger: 0.4,
-                duration: 4,
+                stagger: 0.2,
+                duration: 2,
                 ease: "power2.in",
             })
             ;
@@ -60,15 +60,14 @@ function HMISection() {
     ];
 
     return (
-        <section className='w-screen h-[100vh] flex flex-col items-stretch justify-center pt-6 pl-6 pr-6'>
-
-          <div className='w-auto h-full'>
-            <div ref={container} className='w-full h-1/2 flex flex-col items-center justify-end bg-white'>
-                <div className='h-1/2 flex items-center justify-center'>
-                <h1 
-                  ref={textRef} 
-                  className="font-onsite w-screen md:w-[80%] text-center font-medium tracking-tight text-[#E2ECE2]"
-                >
+        <section className='w-screen h-[150vh] flex flex-col items-stretch justify-center pt-6 pl-6 pr-6'>
+          <div ref={container} className='w-full h-[75vh] flex items-center justify-center '>
+                <img src='./web.gif' className='h-full w-1/2 object-fit'></img>
+          </div>
+          <div  className='w-auto h-[100vh]'>
+            <div className='w-full h-1/2 flex flex-col items-center justify-end bg-white'>
+                <div  ref={textRef}  className='h-1/2 flex items-center justify-center'>
+                <h1 className="font-onsite w-screen md:w-[80%] text-center font-medium tracking-tight text-[#E2ECE2]">
                     {wordsArray.map((word, index) => (
                         <span key={index} className="word text-[#E2ECE2] inline-block px-2 font-9xl font-900 pt-4 pb-4">
                             {word}

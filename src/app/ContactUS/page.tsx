@@ -53,7 +53,7 @@ function Contact() {
         <div className='w-1/2 h-full flex flex-col gap-5 p-4'>
           <p className='w-3/4'>We are ready to connect and collaborate, bringing our expertise to drive your success. Let&#39;s work together to achieve your goals and push the boundaries of what&#39;s possible.</p>
           <hr className='w-full border-1 border-black' />
-          <p className='font-bold italic'>infotagdynamix@gmail.com</p>
+          <p className='font-bold italic'>tagdynamix@gmail.com</p>
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import UNSSection from './sections/UNSSection'
 import SupportSection from './sections/SupportSection'
 import Management from './sections/Management'
 import Hero from './sections/Hero'
+import MESSection from './sections/MESSection'
+import DataAnalyticsSection from './sections/DataAnalyticsSection'
 
 
 function Landing() {
@@ -13,6 +15,8 @@ function Landing() {
     <div>
       {/* <Hero /> */}
       <Hero />
+      <MESSection/>
+      <DataAnalyticsSection />
       <HMISection />
       <DynamicExpertSection />
       <Management />

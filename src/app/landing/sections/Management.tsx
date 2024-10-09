@@ -4,84 +4,77 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ChartLine } from 'lucide-react'
-import Navbar from '@/app/components/Navbar'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const textSections = [
+  "Historical data",
+  "Custom reporting",
+  "Data analytics",
+  "Alarm & Events"
+];
+
+const images = [
+  { src: "/auto1.jpg", alt: "robotic arm 1" },
+  { src: "/auto2.jpg", alt: "robotic arm 2" },
+  { src: "/auto1.jpg", alt: "robotic arm 3" },
+  { src: "/auto2.jpg", alt: "robotic arm 4" },
+];
 
 export default function Management() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const sections = gsap.utils.toArray('.image-section') as HTMLElement[]
-    
+
     sections.forEach((section, i) => {
       gsap.to(section, {
-        zIndex: i + 1, // Increment z-index to bring the image to the front
-
+        zIndex: i + 1,
         scrollTrigger: {
-          trigger: `.text-section:nth-child(${i + 1})`, // Trigger based on the left side text section
-          start: 'top center', // Start when the top of the section hits the center of the viewport
-          end: 'bottom center', // End when the bottom of the section hits the center
-          scrub: true, // Smooth transition as you scroll
-
+          trigger: `.text-section:nth-child(${i + 1})`,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: true,
         },
       })
     })
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill()) // Cleanup GSAP triggers on unmount
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
   }, [])
 
   return (
-    <div className=" w-screen flex flex-col items-center justify-center px-6 ">
-    
-      <div className='bg-[#EEF3ED] w-full'>
-         <div className='w-full  flex justify-center '>
-           <h1 className='font-onsite w-1/2 m-[5vh] text-center'>Manage and view every data captured </h1>
+    <div className="w-screen flex flex-col items-center justify-center px-6">
+      <div className="bg-[#EEF3ED] w-full">
+        <div className="w-full flex justify-center">
+          <h1 className="font-onsite w-1/2 m-[5vh] text-center">Manage and view every data captured</h1>
         </div>
-        <div className='relative w-full flex'>
-      {/* Left Scrollable Text Section */}
-      <div className="w-[96%] lg:w-1/2 relative z-10">
-        <div className="text-section min-h-screen flex flex-col justify-center p-10 rounded-sm ">
-          <h2 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Historical data</h2>
-          {/* <p>Built-in calibration technology, robotics, AI, and automated post-processing...</p> */}
-        </div>
-        <div className="text-section min-h-screen flex flex-col justify-center p-10 ">
-          <h2 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Custom reporting</h2>
-          {/* <p>Faster throughput and larger part capabilities with modern robotics.</p> */}
-        </div>
-        <div className="text-section min-h-screen flex flex-col justify-center p-10 ">
-          <h2 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Data analytics </h2>
-          {/* <p>Achieve higher precision with our latest automation technology.</p> */}
-        </div>
-        <div className="text-section min-h-screen flex flex-col justify-center p-10 ">
-          <h2 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">Alarm & Events </h2>
-          {/* <p>Our automated processes ensure continuous production without interruptions.</p> */}
-        </div>
-      </div>
 
-      {/* Right Sticky Image Section */}
-      <div className="w-[96%] lg:w-1/2 h-screen sticky top-0">
-        <div className='w-full h-screen relative'>
-          {/* Images stacked on top of each other */}
-          <div className="image-section absolute inset-0 scale-95 flex justify-center  ">
-            {/* <img src="/auto1.jpg" alt="robotic arm 1" className="object-cover w-full h-full" /> */}
-                <ChartLine />
+        <div className="relative w-full flex">
+          {/* Left Scrollable Text Section */}
+          <div className="w-[96%] lg:w-1/2 relative z-10">
+            {textSections.map((text, index) => (
+              <div key={index} className="text-section min-h-screen flex flex-col justify-center p-10">
+                <h2 className="font-onsite w-3/4 m-[5vh] text-[35px] leading-[38px] lg:text-[65px] lg:leading-[62px] font-[500] tracking-[-2px] text-center">
+                  {text}
+                </h2>
+              </div>
+            ))}
           </div>
-          <div className="image-section absolute inset-0 scale-95">
-            <img src="/auto2.jpg" alt="robotic arm 2" className="object-cover w-full h-full  " />
-          </div>
-          <div className="image-section absolute inset-0 scale-95">
-            <img src="/auto1.jpg" alt="robotic arm 3" className="object-cover w-full h-full" />
-          </div>
-          <div className="image-section absolute inset-0 scale-95">
-            <img src="/auto2.jpg" alt="robotic arm 4" className="object-cover w-full h-full" />
+
+          {/* Right Sticky Image Section */}
+          <div className="w-[96%] lg:w-1/2 h-screen sticky top-0">
+            <div className="w-full h-screen relative">
+              {images.map((image, index) => (
+                <div key={index} className="image-section absolute inset-0 scale-95">
+                  {index === 0 ? <ChartLine /> : <img src={image.src} alt={image.alt} className="object-cover w-full h-full" />}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      </div>
-      </div> 
     </div>
   )
 }
